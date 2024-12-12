@@ -381,7 +381,7 @@ function createDirectDownloadButtonForImage(imgInfo: ParsedImageInfo): HTMLButto
         }
         downloadImage({
             imageFileUrl: imgUrl,
-            downloadFileFullPath: fileDirPath + '/' + fileNameInfo.fileFullName
+            downloadFileFullPath: (!!fileDirPath ? fileDirPath + '/' : '') + fileNameInfo.fileFullName
         })
         if (!btn.textContent!.startsWith('✔')) {
             btn.textContent = '✔' + btn.textContent
@@ -446,7 +446,7 @@ function createActionsEntryButtonForImage(imgInfo: ParsedImageInfo): HTMLButtonE
                     }
                     downloadImage({
                         imageFileUrl: imgInfo.imgUrl,
-                        downloadFileFullPath: fileDirPath + '/' + fileNameInfo.fileBaseName
+                        downloadFileFullPath: (!!fileDirPath ? fileDirPath + '/' : '') + fileNameInfo.fileBaseName
                     })
                     if (!btn.textContent!.startsWith('✔')) {
                         btn.textContent = '✔' + btn.textContent
