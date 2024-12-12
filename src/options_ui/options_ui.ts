@@ -306,6 +306,7 @@ async function loadFromLocalStorage() {
     setCheckboxValue('#ui_buttonForCloseTab', d.ui.buttonForCloseTab)
     setCheckboxValue('#ui_paginationButtons', d.ui.paginationButtons)
     setCheckboxValue('#ui_autoCloseTabAfterDownload', d.ui.autoCloseTabAfterDownload)
+    setCheckboxValue('#ui_incognitoDownload', d.ui.incognitoDownload)
     setCheckboxValue('#ux_excludeAiGenerated', d.ux.excludeAiGenerated)
     setTextAreaValue('#ux_blockedTags', d.ux.blockedTags)
     setTextAreaValue('#fileName_fileNameMaxCharacterLength', d.fileName.fileNameMaxCharacterLength+'')
@@ -331,7 +332,8 @@ function saveFormToLocalStorage() {
                 openLinkWithNewTab: getCheckboxValue('#ui_openLinkWithNewTab'),
                 buttonForCloseTab: getCheckboxValue('#ui_buttonForCloseTab'),
                 paginationButtons: getCheckboxValue('#ui_paginationButtons'),
-                autoCloseTabAfterDownload: getCheckboxValue('#ui_autoCloseTabAfterDownload')
+                autoCloseTabAfterDownload: getCheckboxValue('#ui_autoCloseTabAfterDownload'),
+		incognitoDownload: getCheckboxValue('#ui_incognitoDownload')
             },
             ux: {
                 excludeAiGenerated: getCheckboxValue('#ux_excludeAiGenerated'),

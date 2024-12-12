@@ -62,6 +62,7 @@ browser.runtime.onMessage.addListener((_msg: any, sender: browser.runtime.Messag
             filename: safeFilename,
             saveAs: false,
             conflictAction: STORAGE.options.fileName.overwriteExisted ? 'overwrite' : 'uniquify',
+	    incognito: STORAGE.options.ui.incognitoDownload,
             headers: [
                 // @ts-expect-error  (Wrong type definition of web-ext?)
                 {

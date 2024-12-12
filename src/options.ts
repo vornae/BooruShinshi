@@ -113,7 +113,8 @@ export interface MyLocalOptions_Ui {
     buttonForCloseTab: boolean,
     /** Design for touchscreen */
     paginationButtons: boolean,
-    autoCloseTabAfterDownload: boolean
+    autoCloseTabAfterDownload: boolean,
+    incognitoDownload: boolean
 }
 export interface MyLocalOptions_Ux {
     /** If image contains "ai_generated", the image will be hidden.
@@ -178,6 +179,7 @@ export const MY_LOCAL_STORAGE_ROOT_DEFAULT: MyLocalStorageRoot = {
             buttonForCloseTab: false,
             paginationButtons: true,
             autoCloseTabAfterDownload: false,
+	    incognitoDownload: false,
         },
         ux: {
             excludeAiGenerated: false,
