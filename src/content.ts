@@ -120,9 +120,9 @@ function generateFileBaseNameByTags(tagDict: FileTags): string {
     fname = templateReplacer(fname, 'artists', artistsInFn)
     const studiosInFn: string = tagDict.studio[0] ? tagDict.studio.map((tag) => tag.en).join(',') : 'no_studios'
     fname = templateReplacer(fname, 'studios', studiosInFn)
-    const copyrightInFn: string = tagDict.copyright[0] ? tagDict.copyright[0].en : 'no series'
+    const copyrightInFn: string = tagDict.copyright[0] ? tagDict.copyright[0].en : 'no_series'
     fname = templateReplacer(fname, 'series', copyrightInFn)
-    const characterInFn: string = tagDict.character[0] ? tagDict.character[0].en : ''
+    const characterInFn: string = tagDict.character[0] ? tagDict.character[0].en : 'no_character'
     fname = templateReplacer(fname, 'character', characterInFn)
     const generalsArr: string[] = []
     for (const tag of tagDict.general) {
