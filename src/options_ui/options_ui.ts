@@ -527,9 +527,10 @@ function exportCfgAsJsonFile() {
         var d = new Date()
         var nowStr: string = `${pad(d.getFullYear())}${pad(d.getMonth() + 1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`
         var blob = new Blob([jsonFileContent], {type: "text/csv;charset=utf-8"})
+	const dlRootFolder = rootObj.options.folder.downloadFolderName
         browser.downloads.download({
             url: URL.createObjectURL(blob),
-            filename: `${rootObj.options.folder.downloadFolderName}/_BooruShinshiSettings/BooruShinshiSettings_${nowStr}.json`,
+            filename: (!!dlRootFolder ? dlRootFolder + '/' : '') + `_BooruShinshiSettings/BooruShinshiSettings_${nowStr}.json`,
         })
         // return
         // var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jsonFileContent);
