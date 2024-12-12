@@ -125,7 +125,8 @@ function generateFileBaseNameByTags(tagDict: FileTags): string {
     const characterInFn: string = tagDict.character[0] ? tagDict.character[0].en : ''
     fname = templateReplacer(fname, 'character', characterInFn)
     const generalsArr: string[] = []
-    for (const tag of tagDict.general) {
+    const sortedGeneralTags: Tag[] = sortTags(tagDict.general, TagSortingMethod.ByCount_Ascending)
+    for (const tag of sortedGeneralTags) {
         if (generalsArr.join(tagSeparator).length + fname.length > fnLenLimit) {
             generalsArr.pop()
             break
