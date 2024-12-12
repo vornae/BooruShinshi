@@ -147,3 +147,80 @@
     .tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}
 
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		// https://github.com/catppuccin/palette/blob/main/docs/css.md
+		--ctp-latte-red: #d20f39;
+		--ctp-latte-yellow: #df8e1d;
+		--ctp-latte-green: #40a02b;
+		--ctp-latte-blue: #1e66f5;
+		--ctp-latte-text: #4c4f69;
+		--ctp-mocha-red: #f38ba8;
+		--ctp-mocha-yellow: #f9e2af;
+		--ctp-mocha-green: #a6e3a1;
+		--ctp-mocha-blue: #89b4fa;
+		--ctp-mocha-text: #cdd6f4;
+		--ctp-mocha-surface1: #45475a;
+		--ctp-mocha-base: #1e1e2e;
+	}
+
+	[id^=BooruShinshi]
+	{
+
+		&:not(#\9) { // Increase specifity
+			background: var(--ctp-mocha-base);
+			color: var(--ctp-mocha-text);
+			border-color: var(--ctp-mocha-text);
+		}
+
+		button:not(#\9) {
+			background: var(--ctp-mocha-surface1);
+			color: var(--ctp-mocha-text);
+			border-color: var(--ctp-mocha-text);
+		}
+
+		button.category__copyright:not(#\9) {
+			background: var(--ctp-mocha-blue);
+			border-color: var(--ctp-latte-blue);
+			color: var(--ctp-latte-text);
+			.categoryType {
+				color: var(--ctp-latte-blue);
+			}
+		}
+		button.category__character:not(#\9) {
+			background: var(--ctp-mocha-green);
+			border-color: var(--ctp-latte-green);
+			color: var(--ctp-latte-text);
+			.categoryType {
+				color: var(--ctp-latte-green);
+			}
+		}
+		button.category__artist:not(#\9) {
+			background: var(--ctp-mocha-red);
+			border-color: var(--ctp-latte-red);
+			color: var(--ctp-latte-text);
+			.categoryType {
+				color: var(--ctp-latte-red);
+			}
+		}
+		button.category__studio:not(#\9) {
+			background: var(--ctp-mocha-yellow);
+			border-color: var(--ctp-latte-yellow);
+			color: var(--ctp-latte-text);
+			.categoryType {
+				color: var(--ctp-latte-yellow);
+			}
+		}
+
+		.LinksContainer a:hover:not(.currentSite):not(#\9) {
+			background: var(--ctp-mocha-surface1);
+		}
+	}
+
+	#BooruShinshi_Paginator a {
+		background: var(--ctp-mocha-surface1);
+		border-color: var(--ctp-mocha-text);
+		color: var(--ctp-mocha-text);
+	}
+}
